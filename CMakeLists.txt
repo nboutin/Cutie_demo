@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 project(datastructures-algorithms C CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_VERBOSE_MAKEFILE ON)
+set(CMAKE_VERBOSE_MAKEFILE OFF)
 
 set(
         HEADERS
