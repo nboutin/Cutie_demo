@@ -1,0 +1,63 @@
+{
+  "version": 4,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "MinGW Makefiles",
+      "warnings": {
+        "dev": true
+      }
+    },
+    {
+      "name": "cutie_demo",
+      "inherits": "base",
+      "displayName": "cutie_demo",
+      "generator": "MinGW Makefiles",
+      "binaryDir": "build-${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Debug"
+        }
+      },
+      "warnings": {
+        "dev": true
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "jobs": 0,
+      "verbose": false
+    },
+    {
+      "name": "cutie_demo",
+      "inherits": "base",
+      "configurePreset": "cutie_demo"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "cutie_demo",
+      "configurePreset": "cutie_demo",
+      "output": {
+        "shortProgress": true,
+        "outputOnFailure": true
+      },
+      "execution": {
+        "stopOnFailure": true,
+        "jobs": 0,
+        "scheduleRandom": true,
+        "timeout": 0
+      }
+    }
+  ]
+}
