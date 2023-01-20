@@ -32,7 +32,7 @@
 *.app
 
 # .idea
-.idea/deployment.xml
+.idea/
 
 # CMake
 cmake-build-*/*
