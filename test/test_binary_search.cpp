@@ -41,7 +41,7 @@ TYPED_TEST_P(BinarySearchTests, SearchNonExistingElement) {
 REGISTER_TYPED_TEST_SUITE_P(BinarySearchTests, SearchExistingValues, SearchNonExistingElement);
 
 using ContainerTypes = Types<std::vector<int>, std::array<int, 11>, List<int>, ArrayList<int>>;
-INSTANTIATE_TYPED_TEST_SUITE_P(, BinarySearchTests, ContainerTypes);
+INSTANTIATE_TYPED_TEST_SUITE_P(Test_001, BinarySearchTests, ContainerTypes);
 
 TEST(BinarySearchTests, SearchInEmptyContainer) {
     std::vector<int> empty;
