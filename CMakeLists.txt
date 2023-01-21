@@ -4,18 +4,16 @@ project(Cutie_demo C CXX)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 
-set(
-        HEADERS
-        inc/list.hpp
-        inc/stack.hpp
-        inc/queue.hpp
-        inc/graph.hpp
-        inc/tree.hpp
-        inc/graph_scanner.hpp
-        inc/binary_search.hpp
-        inc/array_list.hpp
-        inc/merge_sort.h
-)
+set(HEADERS
+    inc/list.hpp
+    inc/stack.hpp
+    inc/queue.hpp
+    inc/graph.hpp
+    inc/tree.hpp
+    inc/graph_scanner.hpp
+    inc/binary_search.hpp
+    inc/array_list.hpp
+    inc/merge_sort.h)
 
 set(CUTIE_DIR Cutie)
 include(${CUTIE_DIR}/Cutie.cmake)
@@ -31,7 +29,16 @@ add_cutie_test_target(TEST test/test_merge_sort.cpp SOURCES src/merge_sort.c)
 add_cutie_test_target(TEST test/test_string_builder.cpp SOURCES src/string_builder.cpp)
 add_cutie_test_target(TEST test/test_min_heap.cpp SOURCES src/min_heap.cpp)
 add_cutie_test_target(TEST test/test_hash_table.cpp SOURCES src/hash_table.c)
+
+add_cutie_test_target(
+  TEST comp/comp_b/test/test_comp_b.cpp
+  SOURCES comp/comp_b/comp_b.c
+  INCLUDE_DIRECTORIES comp/comp_b
+  LINK_LIBRARIES comp_a)
+
 add_cutie_all_tests_target()
 add_cutie_coverage_targets()
 add_cutie_coverage_gcovr_targets()
 add_cutie_coverage_gcovr_html_targets()
+
+add_subdirectory(comp/comp_a)
