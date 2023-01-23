@@ -18,7 +18,6 @@
       "name": "cutie_demo",
       "inherits": "base",
       "displayName": "cutie_demo",
-      "generator": "MinGW Makefiles",
       "binaryDir": "build-${presetName}",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": {

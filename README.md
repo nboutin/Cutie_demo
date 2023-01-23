@@ -1,7 +1,16 @@
 # Cutie demo
----
 
-# Build, Run, Test
+## Windows build
+
+Use https://winlibs.com/
+
+## Python package
+
+- gcovr
+
+  pip install --user <package_name>
+
+## Build, Run, Test
 
 Generate build system:
 
