@@ -10,6 +10,9 @@
       "name": "base",
       "hidden": true,
       "generator": "MinGW Makefiles",
+      "environment": {
+        "PATH": "$penv{CUTIE_COMPILER};$penv{PATH}"
+      },
       "warnings": {
         "dev": true
       }
@@ -17,16 +20,25 @@
     {
       "name": "cutie_demo",
       "inherits": "base",
-      "displayName": "cutie_demo",
+      "displayName": "Cutie Demo",
       "binaryDir": "build-${presetName}",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": {
           "type": "STRING",
           "value": "Debug"
         }
-      },
-      "warnings": {
-        "dev": true
+      }
+    },
+    {
+      "name": "cutie_demo_release",
+      "inherits": "base",
+      "displayName": "Cutie Demo Release",
+      "binaryDir": "build-${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Release"
+        }
       }
     }
   ],
@@ -34,13 +46,18 @@
     {
       "name": "base",
       "hidden": true,
-      "jobs": 0,
+      "jobs": 10,
       "verbose": false
     },
     {
       "name": "cutie_demo",
       "inherits": "base",
       "configurePreset": "cutie_demo"
+    },
+    {
+      "name": "cutie_demo_release",
+      "inherits": "base",
+      "configurePreset": "cutie_demo_release"
     }
   ],
   "testPresets": [
