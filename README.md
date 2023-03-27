@@ -8,26 +8,28 @@ Use https://winlibs.com/
 
 - gcovr
 
-  pip install --user <package_name>
+Install package with pip:
+
+    pip install --user <package_name>
 
 ## Build, Run, Test
 
 Generate build system:
 
-  cmake --preset cutie_demo
+    cmake --preset cutie_demo
 
 Build:
 
-  cmake --build --preset cutie_demo
+    cmake --build --preset cutie_demo
 
 Clean:
 
-  cmake --build --preset cutie_demo --target clean
+    cmake --build --preset cutie_demo --target clean
 
 Run Unit tests:
 
-  ctest --preset cutie_demo
+    ctest --preset cutie_demo
 
 Build gcovr HTML report:
 
-  cmake.exe --build --preset cutie_demo --target coverage_gcovr_html_target
+      cmake.exe --build --preset cutie_demo --target coverage_gcovr_html_target
