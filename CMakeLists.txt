@@ -1,9 +1,14 @@
 cmake_minimum_required(VERSION 3.15)
 project(Cutie_demo C CXX)
 
+# add_compile_options(-Werror -Wall)
+
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+set(CUTIE_GTEST_XML ON)
+set(CUTIE_GTEST_JSON ON)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -29,7 +34,11 @@ add_cutie_test_target(
   LINK_LIBRARIES comp_a)
 
 add_cutie_all_tests_target()
-add_cutie_coverage_targets()
+
+if (NOT CMAKE_HOST_WIN32)
+  add_cutie_coverage_targets() # Use lcov
+endif()
+
 add_cutie_coverage_gcovr_targets()
 add_cutie_coverage_gcovr_html_targets()
 
