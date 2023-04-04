@@ -9,10 +9,7 @@
     {
       "name": "base",
       "hidden": true,
-      "generator": "MinGW Makefiles",
-      "environment": {
-        "PATH": "$penv{CUTIE_COMPILER};$penv{PATH}"
-      },
+      "generator": "Ninja",
       "warnings": {
         "dev": true
       }
@@ -23,9 +20,29 @@
       "displayName": "Cutie Demo",
       "binaryDir": "build-${presetName}",
       "cacheVariables": {
+        "CPM_cutie_SOURCE": {
+          "type": "STRING",
+          "value": "C:/data/dev/Cutie"
+        },
         "CMAKE_BUILD_TYPE": {
           "type": "STRING",
           "value": "Debug"
+        }
+      }
+    },
+    {
+      "name": "cutie_demo_test",
+      "inherits": "cutie_demo",
+      "displayName": "Cutie Demo Test",
+      "binaryDir": "build-${presetName}",
+      "cacheVariables": {
+        "BUILD_TESTING": {
+          "type": "BOOL",
+          "value": "ON"
+        },
+        "BUFFER_TEST": {
+          "type": "BOOL",
+          "value": "ON"
         }
       }
     },

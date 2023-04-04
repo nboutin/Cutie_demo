@@ -1,23 +1,30 @@
 ---
+Language: Json
+BasedOnStyle: LLVM
+---
 Language: Cpp
 AlignAfterOpenBracket: Align
+AlignArrayOfStructures: Right
 AlignConsecutiveAssignments: Consecutive
 AlignConsecutiveMacros: Consecutive
 AlignOperands: Align
 AllowAllArgumentsOnNextLine: false
 AllowAllParametersOfDeclarationOnNextLine: false
-AllowShortFunctionsOnASingleLine: None
+AllowShortEnumsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: Empty
+AlwaysBreakAfterReturnType: None
+AlwaysBreakTemplateDeclarations: Yes
 BinPackArguments: false
 BinPackParameters: false
 BraceWrapping:
     AfterCaseLabel: true
-    AfterClass: true
+    AfterClass: false
     AfterControlStatement: Always
-    AfterEnum: true
+    AfterEnum: false
     AfterFunction: true
-    AfterNamespace: true
-    AfterStruct: true
-    AfterUnion: true
+    AfterNamespace: false
+    AfterStruct: false
+    AfterUnion: false
     AfterExternBlock: false
     BeforeCatch: true
     BeforeElse: true
