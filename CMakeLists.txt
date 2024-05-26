@@ -9,6 +9,8 @@ include(cmake/get_cpm.cmake)
 include(cmake/CPM.cmake)
 include(cmake/cutie_config.cmake)
 
+add_compile_options(-Werror -Wall)
+
 add_subdirectory(cutie_demo_lib)
 
 # After add_subdirectory to collect all tests

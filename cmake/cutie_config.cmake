@@ -8,7 +8,8 @@ set(DLFCN_BUILD_TESTS OFF)
 CPMAddPackage(
   NAME cutie
   GITHUB_REPOSITORY nboutin/Cutie
-  GIT_TAG develop
+  # GIT_TAG develop
+  VERSION 1.4.0
 )
 
 get_filename_component(CUTIE_DIR ${cutie_SOURCE_DIR} REALPATH)

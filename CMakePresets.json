@@ -20,10 +20,6 @@
       "displayName": "Cutie Demo",
       "binaryDir": "build-${presetName}",
       "cacheVariables": {
-        "CPM_cutie_SOURCE": {
-          "type": "STRING",
-          "value": "C:/data/dev/Cutie"
-        },
         "CMAKE_BUILD_TYPE": {
           "type": "STRING",
           "value": "Debug"
